@@ -1,0 +1,322 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eaf6ff;
+    color: #527fa5;
+}
+
+.cover {
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #eaf6ff,
+        #d6edff,
+        #b9ddf7,
+        #eff8ff
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: #527fa5;
+    padding: 25px;
+}
+
+.cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(65, 130, 180, 0.55);
+}
+
+.cover-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cover h1 {
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+.age {
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    margin: 25px auto;
+}
+
+button, .blue-button {
+    background: #b9ddf7;
+    color: #416f98;
+    border: none;
+    border-radius: 30px;
+    padding: 13px 25px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+button:hover, .blue-button:hover {
+    background: white;
+}
+
+/* UMUM */
+.hidden {
+    display: none !important;
+}
+
+.section {
+    padding: 65px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.section h2 {
+    margin-bottom: 25px;
+    color: #659ac5;
+}
+
+.section p {
+    line-height: 1.8;
+}
+
+/* NAVIGASI */
+nav {
+    background: #d6edff;
+    padding: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #527fa5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* COUNTDOWN */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.countdown div {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    min-width: 75px;
+    box-shadow: 0 4px 12px #a9cce5;
+}
+
+.countdown span {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.countdown small {
+    font-size: 13px;
+}
+
+/* KARTU */
+.info-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 0 4px 15px #c4dfef;
+}
+
+/* GALERI */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.gallery img {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* FORM */
+form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select, textarea {
+    padding: 15px;
+    border: 1px solid #b9ddf7;
+    border-radius: 12px;
+    font-family: inherit;
+    width: 100%;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* BUKU TAMU */
+.guest-entry {
+    background: white;
+    padding: 15px;
+    margin: 12px auto;
+    border-radius: 12px;
+    max-width: 500px;
+    text-align: left;
+}
+
+/* FOOTER */
+footer {
+    background: #d6edff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* TOMBOL MUSIK */
+.music-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+/* ANIMASI SCROLL */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .cover h1 {
+        font-size: 30px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .gallery img {
+        height: 170px;
+    }
+
+    .section {
+        padding: 45px 18px;
+    }
+
+    .countdown {
+        gap: 8px;
+    }
+
+    .countdown div {
+        min-width: 65px;
+        padding: 14px 10px;
+    }
+}
+
+nav {
+    position: relative;
+    z-index: 9999;
+}
+
+nav a {
+    position: relative;
+    z-index: 10000;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.gallery img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+/* FONT UTAMA WEBSITE */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+/* FONT UNTUK JUDUL */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+/* TOMBOL */
+button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+/* NAMA DI COVER */
+#guestNameDisplay {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}

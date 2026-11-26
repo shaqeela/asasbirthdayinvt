@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahn Keonho's Birthday Party</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="backgroundMusic" loop>
+        <source src="numsc_mp3.mp3" type="audio/mpeg">
+    </audio>
+
+    <section class="cover" id="cover">
+        <div class="cover-content">
+            <p>YOU ARE INVITED TO</p>
+            <h1>Ahn Keonho's<br>Birthday Party</h1>
+            <div class="age">18</div>
+            <p>14 February 2027</p>
+            <h2 id="guestNameDisplay">You're Invited!</h2>
+            <h3>Birthday Party</h3>
+            <button onclick="openInvitation()">Buka Undangan</button>
+        </div>
+    </section>
+
+    <main id="invitation" class="hidden">
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#event">Acara</a>
+            <a href="#gallery">Galeri</a>
+            <a href="#rsvp">RSVP</a>
+        </nav>
+
+        <!-- PEMBUKAAN -->
+        <section id="home" class="section reveal">
+            <p>WELCOME TO THE PARTY</p>
+            <h1>Ahn Keonho</h1>
+            <h2>18th Birthday Celebration</h2>
+            <p>Let's celebrate this special day together! ^_^ </p>
+        </section>
+
+        <section class="section reveal">
+            <h2>Counting Down</h2>
+            <div class="countdown">
+                <div><span id="days">00</span><small>Hari</small></div>
+                <div><span id="hours">00</span><small>Jam</small></div>
+                <div><span id="minutes">00</span><small>Menit</small></div>
+                <div><span id="seconds">00</span><small>Detik</small></div>
+            </div>
+        </section>
+
+        <section id="event" class="section reveal">
+            <h2>Detail Acara</h2>
+            <div class="info-card">
+                <h3>Birthday Party</h3>
+                <p>Day/Date: Minggu,14 Februari 2027</p>
+                <p>Waktu: 15.00 WIB</p>
+                <p>Lokasi: Pantai Haeundae-gu, Busan, Korea Selatan.</p>
+            </div>
+
+            <a class="blue-button"
+               href="https://maps.app.goo.gl/6FkM3ZKFymKNKi8v8"
+               target="_blank">
+                Lihat Lokasi
+            </a>
+        </section>
+
+        <section id="gallery" class="section reveal">
+            <h2>Photo Gallery</h2>
+            <div class="gallery">
+                <img src="KEONHO.jpg" alt="Foto Keonho">
+                <img src="Keonho (1).jpg" alt="Foto Keonho 2">
+                <img src="download (5).jpg" alt="Foto Keonho 3">
+                <img src="download (4).jpg" alt="Foto Keonho 4">
+            </div>
+        </section>
+
+        <section id="rsvp" class="section reveal">
+            <h2>RSVP & Guest Book</h2>
+            <p>Konfirmasi kehadiran dan tuliskan ucapanmu!</p>
+
+            <form id="guestForm">
+                <input type="text" id="guestName"
+                       placeholder="Nama kamu" required>
+
+                <select id="attendance" required>
+                    <option value="">Konfirmasi kehadiran</option>
+                    <option value="Hadir">Hadir</option>
+                    <option value="Tidak hadir">Tidak hadir</option>
+                </select>
+
+                <textarea id="message"
+                          placeholder="Tulis ucapan dan doa..."
+                          required></textarea>
+
+                <button type="submit" class="blue-button">
+                    Kirim Ucapan
+                </button>
+            </form>
+
+            <div id="guestList"></div>
+        </section>
+
+        <footer>
+            <h2>Thank You!</h2>
+            <p>With love, Ahn Keonho</p>
+        </footer>
+
+        <div class="lightbox" id="lightbox">
+        <img id="lightboxImage" src="" alt="Foto diperbesar">
+    </div>
+    </main>
+
+    <!-- KONTROL MUSIK -->
+    <button id="musicButton" onclick="toggleMusic()"
+            class="music-button hidden">
+        ♫ Musik
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
